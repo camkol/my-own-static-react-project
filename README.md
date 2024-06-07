@@ -53,7 +53,15 @@ I am going to turn this into a React App next.
 
 ### Converting project into a React application
 
-#### 1. Install Create React App and Create a New React Project
+#### 1. Install Create React App
+
+If you haven't already installed Create React App globally, you can do so with:
+
+```bash
+npm install -g create-react-app
+```
+
+#### 2. Create a New React Project
 
 1. **Navigate to your project directory**:
 
@@ -67,7 +75,7 @@ cd my-node-project
 npx create-react-app client
 ```
 
-#### 2. Move Your Static Files into the React App
+#### 3. Move Your Static Files into the React App
 
 1. **Move `index.html` content into `client/public/index.html`**:
 
@@ -195,7 +203,7 @@ ReactDOM.render(
 );
 ```
 
-#### 3. Update the Node.js Server
+#### 4. Update the Node.js Server
 
 1. **Modify `server.js` to serve the React build files**:
 
@@ -238,7 +246,7 @@ console.log(`Server is running on http://localhost:${port}`);
 });
 ```
 
-#### 4. Build and Run the Project
+#### 5. Build and Run the Project
 
 1. **Build the React app for production**:
 
@@ -254,7 +262,7 @@ cd ..
 node server.js
 ```
 
-#### 5. Access the React App
+#### 6. Access the React App
 
 Open your browser and navigate to `http://localhost:3001`. You should see your React app running and fetching data from the server.
 
