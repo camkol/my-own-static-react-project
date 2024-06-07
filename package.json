@@ -1,0 +1,16 @@
+{
+  "name": "my-own-static-react-project",
+  "version": "1.0.0",
+  "description": "- [Overview](#overview)\r   - [The challenge](#the-challenge)\r   - [Screenshot](#screenshot)\r   - [Links](#links)\r - [My process](#my-process)\r   - [Built with](#built-with)\r   - [Instuctions](#instuctions)\r   - [What I learned](#what-i-learned)\r   - [Continued development](#continued-development)\r   - [Useful resources](#useful-resources)\r - [Author](#author)\r - [Acknowledgments](#acknowledgments)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
