@@ -96,22 +96,31 @@ npx create-react-app client
 import React, { useState, useEffect } from "react";
 
 function App() {
+  // useState hooks for managing the items list, name, and price states
   const [items, setItems] = useState([]);
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
 
+  // useEffect hook to fetch items from the server when the component mounts
   useEffect(() => {
     fetchItems();
   }, []);
 
+  // Function to fetch items from the server
   const fetchItems = async () => {
+    // Make a GET request to the /api/items endpoint
     const response = await fetch("/api/items");
+    // Parse the JSON response
     const items = await response.json();
+    // Update the items state with the fetched items
     setItems(items);
   };
 
+  // Function to add a new item to the server and update the state
   const addItem = async (e) => {
+    // Prevent the default form submission behavior
     e.preventDefault();
+    // Make a POST request to the /api/items endpoint with the new item data
     const response = await fetch("/api/items", {
       method: "POST",
       headers: {
@@ -120,9 +129,12 @@ function App() {
       body: JSON.stringify({ name, price }),
     });
 
+    // If the request is successful, parse the JSON response
     if (response.ok) {
       const newItem = await response.json();
+      // Update the items state by adding the new item
       setItems([...items, newItem]);
+      // Clear the input fields
       setName("");
       setPrice("");
     }
@@ -131,6 +143,7 @@ function App() {
   return (
     <div>
       <h1>Static</h1>
+      {/* Form for adding new items */}
       <form id="itemForm" onSubmit={addItem}>
         <input
           type="text"
@@ -151,6 +164,7 @@ function App() {
         <button>Add</button>
       </form>
       <h2>List:</h2>
+      {/* List of items */}
       <ul id="list">
         {items.map((item, index) => (
           <li key={index}>
